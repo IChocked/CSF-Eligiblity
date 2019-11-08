@@ -11,6 +11,8 @@ class Person:
         self.list2 = list2
         self.list3 = list3
 
+        self.l1 = self.l2 = self.l3 = 0
+
 
     def add_points(self, l, grade):
         if grade == 'A':
@@ -46,10 +48,10 @@ class Person:
 
 # RETURNS: boolean for whether or not they are eligible
     def iseligible(self):
-        l1, l2, l3 = self.calc_points()
-        total = l1 + l2 + l3
+        self.l1, self.l2, self.l3 = self.calc_points()
+        total = self.l1 + self.l2 + self.l3
 
-        return total >= 10 and l1 >= 4 and l1 + l2 >= 7# 4 points are from list 1, and first 7 are from list 1 and 2
+        return total >= 10 and self.l1 >= 4 and self.l1 + self.l2 >= 7# 4 points are from list 1, and first 7 are from list 1 and 2
 
 
 # RETURNS: dictionary with class title and name
